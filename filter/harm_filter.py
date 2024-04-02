@@ -68,7 +68,7 @@ class HarmFilter:
                 print(hf_response)
                 
         elif model_name == "gpt":
-            OPENAI_API_KEY =  "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"
+            OPENAI_API_KEY =  None
             openai.api_key = OPENAI_API_KEY
             for response_index in tqdm(range(len(all_responses))):  # Corrected line
                 response = all_responses[response_index]

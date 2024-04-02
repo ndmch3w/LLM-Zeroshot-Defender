@@ -27,7 +27,7 @@ class HarmFilter:
     def get_gpt_response(self, prompt):
         url = "https://api.openai.com/v1/chat/completions"
         # Set the OpenAI API key
-        openai_api_key = "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"  # Replace this with your actual API key
+        openai_api_key = None # Replace this with your actual API key
 
         # Define the headers
         headers = {
