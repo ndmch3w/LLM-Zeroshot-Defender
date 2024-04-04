@@ -9,7 +9,7 @@ class HarmFilter:
 
         # Define the JSON data
         data = {
-            "model": "llama2:7b-chat-q8_0",
+            "model": "llama2:13b", # llama2:7b-chat-q8_0
             "prompt": prompt,
             "stream": False
         }
@@ -21,7 +21,7 @@ class HarmFilter:
             response = request.json()
             return response["response"]
         else:
-            print("Error:", response.status_code)
+            print("Error:", request.status_code)
             return "Error"
 
     def get_gpt_response(self, prompt):
@@ -109,9 +109,9 @@ class HarmFilter:
 
 if __name__ == "__main__":
     hfilter = HarmFilter()
-    all_responses = hfilter.filter("llama2", "data/all_repsonses_llama.csv")
+    all_responses = hfilter.filter("llama2", "data/all_repsonses_gpt.csv")
     # hfilter.filter("gpt", "all_repsonses_gpt.csv")
-    result_file_path = "data/filtered_llama_responses_by_llama.csv"
+    result_file_path = "data/filtered_llama_13bit.csv"
     column_name = "is harmful?"
 
     # Write the list to the CSV file
