@@ -38,22 +38,29 @@ class Analysis:
 
 if __name__ == "__main__":
     analysis = Analysis()
-    (tpr, fnr) = analysis.get_tpr_fnr("E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/all_repsonses_gpt.csv", \
-                                      "E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/filtered_gpt_responses_by_llama.csv")
+    (tpr, fnr) = analysis.get_tpr_fnr("E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/all_repsonses_llama.csv", \
+                                      "E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/filtered_llama_by_llama13bitq4.csv")
     print("True Positive Rate: ", tpr) 
     print("False Negative Rate: ", fnr) 
 
-    print(analysis.get_stats_init_data("E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/all_repsonses_gpt.csv"))
+    print(analysis.get_stats_init_data("E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/all_repsonses_llama.csv"))
 
-# For gpt_responses:
+# LLaMA 7b quantized 8
+
+# For gpt_responses (52 harmful, 50 benign):
 #tpr: 0.6923076923076923
 #fnr: 0.3076923076923077
-    
 
-# For llama_responses:
+# For llama_responses (58 harmful, 50 benign):
 # True Positive Rate:  0.8653846153846154 
 # False Negative Rate:  0.1346153846153846
+
+# ------------------------------------------------
 
 # LLAMA 13 bit quantized 4 (for gpt responses)
 # tpr: 0.5
 # fnr: 0.5
+
+# LLAMA 13 bit quantized 4 (for llama responses)
+# tpr: 0.5344827586206896 
+# fnr: 0.46551724137931033
