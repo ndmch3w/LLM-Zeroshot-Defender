@@ -38,12 +38,12 @@ class Analysis:
 
 if __name__ == "__main__":
     analysis = Analysis()
-    (tpr, fnr) = analysis.get_tpr_fnr("E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/all_repsonses_llama.csv", \
-                                      "E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/filtered_llama_by_llama13bitq4.csv")
+    (tpr, fnr) = analysis.get_tpr_fnr("data/all_repsonses_gpt.csv", \
+                                      "data/filtered_gpt_by_llama13bitq8.csv")
     print("True Positive Rate: ", tpr) 
     print("False Negative Rate: ", fnr) 
 
-    print(analysis.get_stats_init_data("E:/2023-2/Project 2/LLM-Zeroshot-Defender/data/all_repsonses_llama.csv"))
+    print(analysis.get_stats_init_data("data/all_repsonses_llama.csv"))
 
 # LLaMA 7b quantized 8
 
