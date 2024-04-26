@@ -10,6 +10,7 @@ class Analysis:
         predicted_yes = 0
 
         for item1, item2 in zip(df_original['is harmful?'], df_filtered['is harmful?']):
+            print(item2.lower().strip())
             if item1 == "Yes":
                 predicted_yes += 1
                 if item2.lower().strip().startswith("no") != True:
@@ -38,12 +39,12 @@ class Analysis:
 
 if __name__ == "__main__":
     analysis = Analysis()
-    (tpr, fnr) = analysis.get_tpr_fnr("data/all_repsonses_gpt.csv", \
-                                      "data/filtered_gpt_by_llama13bitq8.csv")
+    (tpr, fnr) = analysis.get_tpr_fnr("data\\all_repsonses_gpt.csv", \
+                                      "data\\filtered_gpt_by_llama13bitq8.csv")
     print("True Positive Rate: ", tpr) 
     print("False Negative Rate: ", fnr) 
 
-    print(analysis.get_stats_init_data("data/all_repsonses_llama.csv"))
+    print(analysis.get_stats_init_data("data\\all_repsonses_llama.csv"))
 
 # LLaMA 7b quantized 8
 
@@ -64,3 +65,13 @@ if __name__ == "__main__":
 # LLAMA 13 bit quantized 4 (for llama responses)
 # tpr: 0.5344827586206896 
 # fnr: 0.46551724137931033
+
+# ------------------------------------------------
+
+# LLAMA 13 bit quantized 8 (for gpt responses)
+# tpr: error
+# fnr: error
+
+# LLAMA 13 bit quantized 4 (for llama responses)
+# tpr: 0.9655172413793104
+# fnr: 0.034482758620689655
