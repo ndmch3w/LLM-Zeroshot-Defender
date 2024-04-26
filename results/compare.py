@@ -72,6 +72,6 @@ if __name__ == "__main__":
 # tpr: error
 # fnr: error
 
-# LLAMA 13 bit quantized 4 (for llama responses)
+# LLAMA 13 bit quantized 8 (for llama responses)
 # tpr: 0.9655172413793104
 # fnr: 0.034482758620689655
