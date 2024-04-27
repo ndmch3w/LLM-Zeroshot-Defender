@@ -3,14 +3,13 @@ import pandas as pd
 
 class Analysis:
     def get_tpr_fnr(self, original_csv, filtered_csv):
-        df_original = pd.read_csv(original_csv)
-        df_filtered = pd.read_csv(filtered_csv)
+        df_original = pd.read_csv(original_csv, encoding='unicode_escape')
+        df_filtered = pd.read_csv(filtered_csv, encoding='unicode_escape')
         count_tp = 0
         count_fn = 0
         predicted_yes = 0
 
         for item1, item2 in zip(df_original['is harmful?'], df_filtered['is harmful?']):
-            print(item2.lower().strip())
             if item1 == "Yes":
                 predicted_yes += 1
                 if item2.lower().strip().startswith("no") != True:
@@ -39,8 +38,8 @@ class Analysis:
 
 if __name__ == "__main__":
     analysis = Analysis()
-    (tpr, fnr) = analysis.get_tpr_fnr("data\\all_repsonses_gpt.csv", \
-                                      "data\\filtered_gpt_by_llama13bitq8.csv")
+    (tpr, fnr) = analysis.get_tpr_fnr("data\\all_repsonses_llama.csv", \
+                                      "data\\filtered_llama_by_llama13bitq8.csv")
     print("True Positive Rate: ", tpr) 
     print("False Negative Rate: ", fnr) 
 
@@ -69,8 +68,8 @@ if __name__ == "__main__":
 # ------------------------------------------------
 
 # LLAMA 13 bit quantized 8 (for gpt responses)
-# tpr: error
-# fnr: error
+# tpr: 0.5384615384615384
+# fnr: 0.46153846153846156
 
 # LLAMA 13 bit quantized 8 (for llama responses)
 # tpr: 0.9655172413793104
