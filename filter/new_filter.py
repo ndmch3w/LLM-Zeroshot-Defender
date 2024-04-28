@@ -108,9 +108,9 @@ class HarmFilter:
 
 if __name__ == "__main__":
     hfilter = HarmFilter()
-    all_responses = hfilter.filter("llama2", "data/all_repsonses_gpt.csv")
+    all_responses = hfilter.filter("llama2", "data/responses/all_labeled_gpt-3.5-turbo.csv")
     # hfilter.filter("gpt", "all_repsonses_gpt.csv")
-    result_file_path = "data/filtered_gpt_by_llama13bitq8.csv"
+    result_file_path = "data/results/full_filtered.csv"
     column_name = "is harmful?"
 
     # Write the list to the CSV file
