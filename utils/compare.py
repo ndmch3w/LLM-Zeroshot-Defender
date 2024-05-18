@@ -43,7 +43,11 @@ if __name__ == "__main__":
     #print("True Positive Rate: ", tpr) 
     #print("False Negative Rate: ", fnr) 
 
-    print(analysis.get_stats_init_data("data\\responses\\all_labeled_gpt-3.5-turbo.csv"))
+    print(analysis.get_stats_init_data("data\\responses\\evaluate.csv"))
+    (tpr, fnr) = analysis.get_tpr_fnr("data\\responses\\evaluate.csv", \
+                                      "data\\filtered_universal_by_llama13bitq8.csv")
+    print("True Positive Rate: ", tpr) 
+    print("False Negative Rate: ", fnr) 
 
 # LLaMA 7b quantized 8
 

@@ -32,8 +32,8 @@ class DataModifier:
                 print(f"Error: Column '{col_name}' not found in the CSV file.")
 
 if __name__ == "__main__":
-    dataModifier = DataModifier("data\\responses\\all_labeled_gpt-3.5-turbo.csv")
-    dataModifier.change_col_name("Label", "is harmful?")
+    dataModifier = DataModifier("data\\responses\\evaluate.csv")
+    dataModifier.change_col_name("label", "is harmful?")
     dataModifier.change_col_name("Response", "response")
     dataModifier.change_value("is harmful?", "0", "No")
     dataModifier.change_value("is harmful?", "1", "Yes")
